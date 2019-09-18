@@ -91,7 +91,7 @@ def ninth_poems_message(ninth_poems):
 @bot.message_handler(regexp=WHY)
 def tenth_poems_message(tenth_poems):
     if WHY.lower():
-        with open('poems/Зачем') as f_obj:
+        with open('poems/Зачем.txt') as f_obj:
             content = f_obj.read()
             bot.reply_to(tenth_poems, content)
 
