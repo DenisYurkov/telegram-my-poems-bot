@@ -7,6 +7,7 @@ from messages import *  # Import all message
 def send_welcome(message):
     bot.reply_to(message, AUHTOR)
     bot.reply_to(message, HELP_MESSAGE)
+    bot.reply_to(message, CONTACTS)
 
 
 # Handles all text messages that match the regular expression
@@ -27,7 +28,7 @@ def first_poems_message(first_poems):
 @bot.message_handler(regexp=FORGET)
 def second_poems_message(second_poems):
     if FORGET.lower():
-        with open('poems/Забудь') as f_obj:
+        with open('poems/Забудь.txt') as f_obj:
             content = f_obj.read()
             bot.reply_to(second_poems, content)
 
@@ -91,7 +92,7 @@ def ninth_poems_message(ninth_poems):
 @bot.message_handler(regexp=WHY)
 def tenth_poems_message(tenth_poems):
     if WHY.lower():
-        with open('poems/Зачем') as f_obj:
+        with open('poems/Зачем.txt') as f_obj:
             content = f_obj.read()
             bot.reply_to(tenth_poems, content)
 
@@ -130,14 +131,15 @@ def fourteenth_poems_message(fourteenth_poems):
 
 @bot.message_handler(regexp=CITY_OF_THE_DEAD)
 def fifteen_poems_message(fifteen_poems):
-    if FAREWELL_NOTE.lower():
+    if CITY_OF_THE_DEAD .lower():
         with open('poems/Город мертвецов.txt') as f_obj:
             content = f_obj.read()
             bot.reply_to(fifteen_poems, content)
 
+
 @bot.message_handler(regexp=ON_THE_ROAD)
 def sixteen_poems_message(sixteen_poems):
-    if FAREWELL_NOTE.lower():
+    if ON_THE_ROAD.lower():
         with open('poems/В дороге.txt') as f_obj:
             content = f_obj.read()
             bot.reply_to(sixteen_poems, content)
@@ -145,10 +147,11 @@ def sixteen_poems_message(sixteen_poems):
 
 @bot.message_handler(regexp=THOUGHTS_IN_MY_HEAD)
 def seventeen_poems_message(seventeen_poems):
-    if FAREWELL_NOTE.lower():
+    if THOUGHTS_IN_MY_HEAD.lower():
         with open('poems/Мысли в голове.txt') as f_obj:
             content = f_obj.read()
             bot.reply_to(seventeen_poems, content)
+
 
 if __name__ == "__main__":
     bot.polling(none_stop=True)
